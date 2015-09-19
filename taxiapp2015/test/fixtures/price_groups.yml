@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city_from: MyString
+  city_to: MyString
+  cost: 
+
+two:
+  city_from: MyString
+  city_to: MyString
+  cost: 
