@@ -1,0 +1,46 @@
+<div>
+  <div class="imgOperator">
+    <%= image_tag("operator_default.png")%>
+  </div>
+  <div class="infoOperator">
+    
+      <p><strong>Nombre:</strong></p>
+      <%= @driver.nombre %>
+       <p><strong>Apellidos:</strong></p>
+      <%= @driver.apellidos %>
+      <p><strong>Email:</strong></p>
+      <%= @driver.email %>
+      <h2>Datos del Auto</h2>
+       <p>
+  <strong>Nro Placa:</strong></p>
+  <%= @driver.nroPlacaAuto %>
+
+
+<p>
+  <strong>Marca:</strong></p>
+  <%= @driver.marca %>
+
+
+<p>
+  <strong>Modelo:</strong></p>
+  <%= @driver.model %>
+
+
+<p>
+  <strong>Nro asientos:</strong></p>
+  <%= @driver.nroAsientos %>
+
+
+<p>
+  <strong>Tipo auto:</strong></p>
+  <%= @driver.tipoAuto %>
+
+      
+       <p><strong>Editar mi información:</strong></p>
+       <span class="glyphicon glyphicon-edit"></span> <%= link_to 'Editar info', edit_driver_path(@driver) %>
+  </div>
+</div>
+
+
+
+

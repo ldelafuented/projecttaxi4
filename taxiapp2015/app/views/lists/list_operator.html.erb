@@ -1,0 +1,27 @@
+<h1>Listando operadores</h1>
+<br>
+<%= link_to 'Nuevo',new_operator_path %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @operators.each do |operator| %>
+      <tr>
+        <td><%= operator.nombre %></td>
+        <td><%= operator.apellidos %></td>
+        <td><%= operator.email %></td>
+        <td><%= link_to '', operator,class: "glyphicon glyphicon-zoom-in" %></td>
+        <td><%= link_to '', edit_operator_path(operator),class: "glyphicon glyphicon-edit"  %></td>
+        <td><%= link_to '', operator, method: :delete, data: { confirm: 'Are you sure?' },class: "glyphicon glyphicon-remove"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

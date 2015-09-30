@@ -1,0 +1,58 @@
+<%= form_for(@driver) do |f| %>
+  <% if @driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+
+      <ul>
+      <% @driver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-xs-6 form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :nroPlacaAuto, "Nro Placa Auto" %><br>
+    <%= f.text_field :nroPlacaAuto %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :marca %><br>
+    <%= f.text_field :marca %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :apellidos %><br>
+    <%= f.text_field :apellidos %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :modelo %><br>
+    <%= f.text_field :model %>
+  </div>
+ 
+  <div class="col-xs-6 form-group">
+    <%= f.label :password_digest, "Contraseña" %><br>
+    <%= f.password_field :password %>
+  </div>
+   <div class="col-xs-6 form-group">
+    <%= f.label :nroAsientos, "Nro Asientos" %><br>
+    <%= f.number_field :nroAsientos %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :password_digest_confirmation, "Confirmar contraseña" %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="col-xs-6 form-group">
+    <%= f.label :tipoAuto, "Tipo Auto" %><br>
+    <%= f.text_field :tipoAuto %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Registrar", class:"btn btn-primary" %>
+  </div>
+<% end %>

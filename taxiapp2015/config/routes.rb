@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  
+  resources :drivers
+  resources :operators
+  get    'mng/login'   => 'mng#login'
+  post   'mng/login'   => 'mng#createSession'
+  delete 'mng/logout'  => 'mng#destroySession'
+  get    'mng/login_driver'   => 'mng#login_driver'
+  post   'mng/login_driver'   => 'mng#createSessionDriver'
+  delete 'mng/logout_driver'  => 'mng#destroySessionDriver'
+  get    'lists/list_operator' => 'lists#list_operator'
+  get    'lists/list_driver' => 'lists#list_driver'
+ 
+
+  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

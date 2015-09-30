@@ -1,0 +1,18 @@
+<div>
+  <div class="imgOperator">
+    <%= image_tag("operator_default.png")%>
+  </div>
+  <div class="infoOperator">
+    
+      <p><strong>Nombre:</strong></p>
+      <%= @operator.nombre %>
+       <p><strong>Apellidos:</strong></p>
+      <%= @operator.apellidos %>
+     <p><strong>Email:</strong></p>
+      <%= @operator.email %>
+      <p><strong>Perfil:</strong></p>
+      <%= @operator.esAdmin == true ? "Operador Principal" : "Operador" %>
+       <p><strong>Editar mi información:</strong></p>
+       <span class="glyphicon glyphicon-edit"></span> <%= link_to 'Editar info', edit_operator_path(@operator) %>
+  </div>
+</div>

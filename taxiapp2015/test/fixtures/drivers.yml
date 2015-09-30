@@ -1,15 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  lastname: MyString
-  dni: MyString
   email: MyString
+  nombre: MyString
+  apellidos: MyString
   password: MyString
+  nroPlacaAuto: MyString
+  marca: MyString
+  model: MyString
+  nroAsientos: MyString
+  tipoAuto: MyString
 
 two:
-  name: MyString
-  lastname: MyString
-  dni: MyString
   email: MyString
+  nombre: MyString
+  apellidos: MyString
   password: MyString
+  nroPlacaAuto: MyString
+  marca: MyString
+  model: MyString
+  nroAsientos: MyString
+  tipoAuto: MyString

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taxiapp2015</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+    <div class="logo"><a>Taxi <span>Express</span></a></div>
+    <% if logged_inOperator? %>
+    <div class="opciones">
+        <ul class="menu">
+            <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%=current_operator.nombre%>, <%=current_operator.apellidos%></li>
+            <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <%= link_to "Perfil", current_operator%></li>
+            <li><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <%= link_to 'Salir', mng_logout_path, :method => :delete %></li>
+        </ul>
+    </div>
+    <% end %>
+     <% if logged_inDriver? %>
+    <div class="opciones">
+        <ul class="menu">
+            <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%=current_driver.nombre%>, <%=current_driver.apellidos%></li>
+            <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <%= link_to "Perfil", current_driver%></li>
+            <li><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <%= link_to 'Salir', mng_logout_driver_path, :method => :delete %></li>
+        </ul>
+    </div>
+    <% end %>
+</header>
+<div id="container">
+    <div class="sidebar">
+          <% if logged_inOperator? %>
+        <h5>Menú <%=current_operator.esAdmin == true ? "Operador Principal" : "Operador"%></h5><br/>
+        
+        <ul class="menuver">
+            <li><%= link_to "Inicio", operators_path,class: current_page?(operators_path) ? "selected" : "" %></li>
+            <% if current_operator.esAdmin == true%>
+            <li><%= link_to "Operador", lists_list_operator_path,class: current_page?(lists_list_operator_path) ? "selected" : ""%></li>
+            <%end%>
+            <li><%= link_to "Chofer", lists_list_driver_path,class: current_page?(lists_list_driver_path) ? "selected" : ""%></li>
+            <li><%= link_to "Ver Solicitudes", new_operator_path,class: current_page?(new_operator_path) ? "selected" : ""%></li>
+        </ul>
+        <%end%>
+         <% if logged_inDriver? %>
+          <h5>Menú Chofer</h5><br/>
+        
+        <ul class="menuver">
+            <li><%= link_to "Inicio", drivers_path,class: current_page?(drivers_path) ? "selected" : "" %></li>
+            <li><%= link_to "Ver Solicitudes", new_operator_path,class: current_page?(new_operator_path) ? "selected" : ""%></li>
+        </ul>
+        <%end%>
+    </div>
+    <div class="content">
+        <%= yield %>
+    </div>
+   
+</div>
+</body>
+</html>

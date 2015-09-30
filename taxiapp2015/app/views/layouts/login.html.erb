@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taxiapp2015</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+    <div class="logo"><a>Taxi <span>Express</span></a></div>
+</header>
+
+<div class="centerForm">
+<%= yield %>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<h1>Listando choferes</h1>
+<br>
+<%= link_to 'Nuevo',new_driver_path %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @choferes.each do |choferes| %>
+      <tr>
+        <td><%= choferes.nombre %></td>
+        <td><%= choferes.apellidos %></td>
+        <td><%= choferes.email %></td>
+        <td><%= link_to '', choferes,class: "glyphicon glyphicon-zoom-in" %></td>
+        <td><%= link_to '', edit_driver_path(choferes),class: "glyphicon glyphicon-edit"  %></td>
+        <td><%= link_to '', choferes, method: :delete, data: { confirm: 'Are you sure?' },class: "glyphicon glyphicon-remove"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

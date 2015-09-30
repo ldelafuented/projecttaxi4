@@ -1,0 +1,13 @@
+<h1>Dashboard</h1>
+<% if current_operator.esAdmin == true %>
+<div class="nroOperadores">
+    <center><strong>Nro. Operadores</strong></center>
+    <center><h1><%=@operators.count%></h1></center>
+    
+</div>
+<%end%>
+<div class="nroChoferes">
+    <center><strong>Nro. Choferes</strong></center>
+    <center><h1><%=@drivers.count%></h1></center>
+     
+</div>

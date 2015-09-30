@@ -1,0 +1,15 @@
+<center><h3><strong>Ingresar al sistema</strong></h3></center>
+<hr>
+<%= form_for(:operator,url: mng_login_path) do |f| %>
+<div class="field">
+   <center> <%= f.label :email %></center>
+    <center><%= f.email_field :email %></center>
+  </div>
+  <div class="field">
+   <center> <%= f.label :password,"Contraseña" %></center>
+    <center><%= f.password_field :password %></center>
+  </div>
+  <div class="actions">
+   <center><%= f.submit "Ingresar", class:"btn btn-primary" %></center>
+  </div>
+  <%end%>
